@@ -6,6 +6,17 @@ from datetime import datetime
 _NUM_COLORS = 8
 _MAX_GAME = 3
 
+amount_of_colors = {
+    0: 15,
+    1: 15,
+    2: 15,
+    3: 15,
+    4: 15,
+    5: 10,
+    6: 10,
+    7: 5
+}
+
 id_to_color = {
     0: 'red',
     1: 'yellow',
@@ -31,7 +42,7 @@ color_to_id = {
 # units are (color, value)
 def generate_units():
     list_colors = range(_NUM_COLORS)
-    units = [c for c in list_colors for v in range(12)]
+    units = [c for c in list_colors for v in range(amount_of_colors[c])]
     return units
 
 _PREVIOUS_GUESSES = []
